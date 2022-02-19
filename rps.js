@@ -1,3 +1,8 @@
+const game = () => {
+    let uScore = 0
+    let cScore = 0
+}
+
 const computerChoiceDisplay = document.getElementById("computerChoice")
 const userChoiceDisplay = document.getElementById("userChoice")
 const resultDisplay = document.getElementById("result")
@@ -5,6 +10,7 @@ const possibleChoices = document.querySelectorAll('button')
 let userChoice 
 let computerChoice 
 let result
+
 
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
@@ -54,6 +60,9 @@ function generateComputerChoice() {
     resultDisplay.innerHTML = result
     }
 
-
+const updateScore = () => {
+    const userScore = document.querySelector('.user-score p')
+    
+}
 
 
