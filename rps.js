@@ -2,12 +2,12 @@ const computerChoiceDisplay = document.getElementById("computerChoice")
 const userChoiceDisplay = document.getElementById("userChoice")
 const resultDisplay = document.getElementById("result")
 const possibleChoices = document.querySelectorAll('button')
-const computerScoreDisplay = document.getElementById('computer-score')
-const userScoreDisplay = document.getElementById('user-score')
+const computerScoreDisplay = document.getElementById("computer-score")
+const userScoreDisplay = document.getElementById("user-score")
 let userChoice 
 let computerChoice 
 let result
-let computerScore = 0
+let computerScore = 0 
 let userScore = 0
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
@@ -15,7 +15,7 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
  userChoiceDisplay.textContent = userChoice
  generateComputerChoice()
  getResult()
- getScore()
+ 
 }))
 
 
@@ -66,42 +66,6 @@ function generateComputerChoice() {
         
     }
     resultDisplay.textContent = result
-    }
-    
+          
+   }       
 
-    function getScore() {
-    if (computerChoice === userChoice)
-     userScore = 1
-            
-   
-    if (computerChoice === 'rock' && userChoice === 'paper') {
-        userScore = ++
-     
-       
-    }
-    if (computerChoice === 'rock' && userChoice === 'scissors') {
-        computerScore = ++
-           
-    }
-    
-    if (computerChoice === 'paper' && userChoice === 'scissors') {
-        userScore = ++
-        
-    }
-    if (computerChoice === 'paper' && userChoice === 'rock') {
-        computerScore = ++
-        
-    }
-    if (computerChoice === 'scissors' && userChoice === 'rock') {
-       userScore = ++
-        
-    }
-    if (computerChoice === 'scissors' && userChoice === 'paper') {
-        computerScore = ++
-        
-    }
-    computerScoreDisplay.textContent = computerScore
-   userScoreDisplay.textContent = userScore
-}       
-
-    

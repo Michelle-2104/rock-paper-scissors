@@ -1,0 +1,27 @@
+.play {
+    background-color: wheat;
+}
+
+
+
+.container {
+display: flex;
+border-style: double;
+border-color: brown;
+background-color: rgb(182, 113, 113);
+justify-content: center;
+flex-direction: column;
+font-style: oblique ;
+color: blanchedalmond;
+}
+
+#computerChoice {
+    color: pink;
+}
+
+#userChoice {
+    color: palevioletred;
+}
+h2 {
+    color: blueviolet;
+}
