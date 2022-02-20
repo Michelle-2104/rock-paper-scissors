@@ -1,26 +1,26 @@
-const game = () => {
-    let uScore = 0
-    let cScore = 0
-}
-
 const computerChoiceDisplay = document.getElementById("computerChoice")
 const userChoiceDisplay = document.getElementById("userChoice")
 const resultDisplay = document.getElementById("result")
 const possibleChoices = document.querySelectorAll('button')
+const computerScoreDisplay = document.getElementById('computer-score')
+const userScoreDisplay = document.getElementById('user-score')
 let userChoice 
 let computerChoice 
 let result
-
-
+let computerScore = 0
+let userScore = 0
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
  userChoice = e.target.id
- userChoiceDisplay.innerHTML = userChoice
+ userChoiceDisplay.textContent = userChoice
  generateComputerChoice()
  getResult()
+ getScore()
 }))
+
+
 function generateComputerChoice() {
-    const randomNumber = Math.floor(Math.random() *3)
+    const randomNumber = Math.floor(Math.random() *3)+1
         
     if (randomNumber === 1) {
         computerChoice = 'rock'
@@ -31,38 +31,77 @@ function generateComputerChoice() {
      if (randomNumber === 3) {
          computerChoice = 'paper'
      }
-     computerChoiceDisplay.innerHTML = computerChoice
-            
-    }
+     computerChoiceDisplay.textContent = computerChoice
+    }       
+    
     function getResult() {
     if (computerChoice === userChoice) {
         result = 'its a draw!'
+            
     }
     if (computerChoice === 'rock' && userChoice === 'paper') {
         result = 'you win!'
+       
+       
     }
     if (computerChoice === 'rock' && userChoice === 'scissors') {
         result = 'you lose!'
+        
     }
     
     if (computerChoice === 'paper' && userChoice === 'scissors') {
         result = 'you win'
+        
     }
     if (computerChoice === 'paper' && userChoice === 'rock') {
         result = 'you lose!'
+        
     }
     if (computerChoice === 'scissors' && userChoice === 'rock') {
         result = 'you win!'
+        
     }
     if (computerChoice === 'scissors' && userChoice === 'paper') {
         result = 'you lose!'
+        
     }
-    resultDisplay.innerHTML = result
+    resultDisplay.textContent = result
     }
-
-const updateScore = () => {
-    const userScore = document.querySelector('.user-score p')
     
-}
 
+    function getScore() {
+    if (computerChoice === userChoice)
+     userScore = 1
+            
+   
+    if (computerChoice === 'rock' && userChoice === 'paper') {
+        userScore = ++
+     
+       
+    }
+    if (computerChoice === 'rock' && userChoice === 'scissors') {
+        computerScore = ++
+           
+    }
+    
+    if (computerChoice === 'paper' && userChoice === 'scissors') {
+        userScore = ++
+        
+    }
+    if (computerChoice === 'paper' && userChoice === 'rock') {
+        computerScore = ++
+        
+    }
+    if (computerChoice === 'scissors' && userChoice === 'rock') {
+       userScore = ++
+        
+    }
+    if (computerChoice === 'scissors' && userChoice === 'paper') {
+        computerScore = ++
+        
+    }
+    computerScoreDisplay.textContent = computerScore
+   userScoreDisplay.textContent = userScore
+}       
 
+    
